@@ -9,7 +9,7 @@ min_values = []
 
 for line in sys.stdin:
     line = line.strip()
-    _, _, value  = line.split('\t')
+    _, _, value  = line.split(',')
     value = float(value)
     
     if len(min_values) < k:
@@ -22,4 +22,4 @@ for line in sys.stdin:
 min_values.sort(key=lambda x: x[1])
 
 for record in min_values:
-    print(record[0])
+    print(record[0].replace(',','   '))
